@@ -22,7 +22,7 @@ def render_results():
     mgr = owm.weather_manager()
     observation = mgr.weather_at_place(city)
     w = observation.weather
-    temp = w.temperature('celsius')['temp']
+    temp = round(w.temperature('celsius')['temp'],0)
     details = w.detailed_status
     if details == "mist":
         icon = "fas fa-smog"
